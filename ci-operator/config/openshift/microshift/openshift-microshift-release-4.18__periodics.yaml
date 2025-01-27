@@ -5,6 +5,7 @@ build_root:
     tag: rhel-9-release-golang-1.22-openshift-4.18
 images:
 - dockerfile_literal: |
+    FROM root
     RUN dnf install --setopt=tsflags=nodocs -y koji && dnf clean all
   optional: true
   from: root

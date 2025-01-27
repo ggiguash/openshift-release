@@ -17,6 +17,7 @@ images:
   optional: true
   to: microshift-test-rpm
 - dockerfile_literal: |
+    FROM root
     RUN dnf install --setopt=tsflags=nodocs -y koji && dnf clean all
   optional: true
   from: root
