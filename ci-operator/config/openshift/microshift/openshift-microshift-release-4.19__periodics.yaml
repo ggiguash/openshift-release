@@ -6,7 +6,9 @@ build_root:
 images:
 - dockerfile_literal: |
     FROM root
-    RUN dnf install --setopt=tsflags=nodocs -y koji && dnf clean all
+    RUN /bin/dnf install -y koji && \
+        /bin/dnf clean all && \
+        ln -sv /usr/bin/koji /usr/bin/brew
   optional: true
   from: root
   to: microshift-release-custom-image
