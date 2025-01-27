@@ -9,6 +9,10 @@ images:
     RUN /bin/dnf install --enablerepo=epel -y koji && \
         /bin/dnf clean all && \
         ln -sv /usr/bin/koji /usr/bin/brew
+  inputs:
+  src:
+    as:
+    - release
   optional: true
   to: microshift-release-custom-image
 promotion:
