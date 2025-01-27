@@ -5,7 +5,7 @@ build_root:
     tag: rhel-9-release-golang-1.23-openshift-4.19
 images:
 - dockerfile_literal: |
-    FROM root
+    FROM release
     RUN /bin/dnf install --enablerepo=epel -y koji && \
         /bin/dnf clean all && \
         ln -sv /usr/bin/koji /usr/bin/brew
