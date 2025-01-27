@@ -5,14 +5,14 @@ build_root:
     tag: rhel-9-release-golang-1.23-openshift-4.19
 images:
 - dockerfile_literal: |
-    FROM release
+    FROM root
     RUN /bin/dnf install --enablerepo=epel -y koji && \
         /bin/dnf clean all && \
         ln -sv /usr/bin/koji /usr/bin/brew
   inputs:
   src:
     as:
-    - release
+    - root
   optional: true
   to: microshift-release-custom-image
 promotion:
