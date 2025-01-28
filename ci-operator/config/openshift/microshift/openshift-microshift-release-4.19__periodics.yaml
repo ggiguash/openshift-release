@@ -6,7 +6,8 @@ build_root:
 images:
 - dockerfile_literal: |
     FROM root
-    RUN /bin/dnf install --enablerepo=epel -y koji && \
+    RUN /bin/dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm && \
+        /bin/dnf install -y koji && \
         /bin/dnf clean all && \
         ln -sv /usr/bin/koji /usr/bin/brew
   optional: true
