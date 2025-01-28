@@ -10,6 +10,7 @@ images:
         /bin/dnf clean all && \
         ln -sv /usr/bin/koji /usr/bin/brew
   optional: true
+  from: root
   to: microshift-release-custom-image
 promotion:
   to:
